@@ -285,46 +285,44 @@ class _DropdownDemoState extends State<DropdownDemo> {
 */
 
 
-void main(){
+void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Practice",
-      
       home: HomePage(),
     );
   }
 }
 
-
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          "Talha"
-        ),
+        title: Text("Talha"),
         backgroundColor: Colors.amber,
       ),
       body: Container(
         height: 100,
         width: double.infinity,
         margin: EdgeInsets.all(20),
-        color: Colors.blue,
+        //color: Colors.blue,
         padding: EdgeInsets.all(20),
-        alignment: Alignment.centerLeft,
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          border: Border.all(color:Colors.black, width:3),
+        ),
         child: Text("Hi"),
       ),
     );
   }
 }
-
