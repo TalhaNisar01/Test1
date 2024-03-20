@@ -296,8 +296,33 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Practice",
-      theme: ThemeData(
-        primaryColor: Colors.green,
+      
+      home: HomePage(),
+    );
+  }
+}
+
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Talha"
+        ),
+        backgroundColor: Colors.amber,
+      ),
+      body: Container(
+        height: 100,
+        width: double.infinity,
+        margin: EdgeInsets.all(20),
+        color: Colors.blue,
+        padding: EdgeInsets.all(20),
+        alignment: Alignment.centerLeft,
+        child: Text("Hi"),
       ),
     );
   }
