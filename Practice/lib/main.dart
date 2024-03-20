@@ -282,7 +282,6 @@ class _DropdownDemoState extends State<DropdownDemo> {
   }
 }
 
-*/
 
 
 void main() {
@@ -319,9 +318,48 @@ class HomePage extends StatelessWidget {
         padding: EdgeInsets.all(20),
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          border: Border.all(color:Colors.black, width:3),
+          border: Border.all(color: Colors.black, width: 3),
+          borderRadius: BorderRadius.circular(20),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.5),
+              spreadRadius: 5,
+              blurRadius: 7,
+              offset: Offset(0, 3), // changes position of shadow
+            ),
+          ],
         ),
         child: Text("Hi"),
+      ),
+    );
+  }
+}
+*/
+
+
+void main() => runApp(const MyApp());
+ 
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+ 
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text("Container example"),
+        ),
+        body: Container(
+          height: 200,
+          width: double.infinity,
+          color: Colors.purple,
+          alignment: Alignment.center,
+          margin: const EdgeInsets.all(20),
+          padding: const EdgeInsets.all(30),
+          transform: Matrix4.rotationZ(0.4),
+          child: const Text("Hello! i am inside a container!",
+              style: TextStyle(fontSize: 20)),
+        ),
       ),
     );
   }
