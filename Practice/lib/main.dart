@@ -334,7 +334,7 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-*/
+
 
 
 void main() => runApp(const MyApp());
@@ -361,6 +361,57 @@ class MyApp extends StatelessWidget {
               style: TextStyle(fontSize: 20)),
         ),
       ),
+    );
+  }
+}
+
+*/
+
+
+void main(){
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "Practice",
+      home: HomePage(),
+    );
+  }
+}
+
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('GeeksforGeeks')),
+    body: const Center(
+      child: Text(
+        "Welcome to GeeksforGeeks!!!",
+        style: TextStyle(
+          color: Colors.black,
+          fontSize: 40.0,
+        ),
+      ),
+    ),
+    floatingActionButton: FloatingActionButton(
+      backgroundColor:Colors.blue,
+      elevation: 10.0,
+      child: Icon(
+        Icons.add,
+        color: Colors.amber,
+      ),
+      onPressed:(){
+
+      },
+    ),
     );
   }
 }
