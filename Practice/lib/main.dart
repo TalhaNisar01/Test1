@@ -365,7 +365,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-*/
+
 
 
 void main(){
@@ -412,6 +412,142 @@ class HomePage extends StatelessWidget {
 
       },
     ),
+    );
+  }
+}
+
+
+
+
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Drawer Example',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: HomePage(),
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  const HomePage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Drawer Example'),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          children:  <Widget>[
+            DrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.green,
+                border: Border.all(color:Colors.amber,width:2),
+                
+              ),
+              child: Text(
+                'Welcome to Drawer Section!!',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
+                ),
+              ),
+            ),
+            ListTile(
+              title: Text('Item 1'),
+              leading: Icon(Icons.people),
+            ),
+            ListTile(
+              title: Text('Item 2'),
+              leading: Icon(Icons.mail),
+            ),
+          ],
+        ),
+      ),
+      body: Center(
+        child: Text('Welcome to the Home Page!'),
+      ),
+    );
+  }
+}
+
+*/
+
+
+
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'BottomNavigationBar Example',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: HomePage(),
+    );
+  }
+}
+
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
+
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  int _currentIndex = 0;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('BottomNavigationBar Example'),
+      ),
+      body: Center(
+        child: Text('Current Index: $_currentIndex'),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentIndex,
+        fixedColor: Colors.green,
+        items: const [
+          BottomNavigationBarItem(
+            label: "Home",
+            icon: Icon(Icons.home),
+          ),
+          BottomNavigationBarItem(
+            label: "Search",
+            icon: Icon(Icons.search),
+          ),
+          BottomNavigationBarItem(
+            label: "Profile",
+            icon: Icon(Icons.account_circle),
+          ),
+        ],
+        onTap: _onItemTapped,
+      ),
     );
   }
 }
