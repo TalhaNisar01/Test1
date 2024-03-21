@@ -482,7 +482,7 @@ class HomePage extends StatelessWidget {
   }
 }
 
-*/
+
 
 
 
@@ -547,6 +547,74 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
         onTap: _onItemTapped,
+      ),
+    );
+  }
+}
+
+
+
+*/
+
+
+
+void main() {
+  runApp(MyApp());
+}
+
+
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: "Flutter Demo",
+      home: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.green,
+          title:Text(
+            "Flutter Drawer Demo",style: TextStyle(
+              color: Colors.white
+            ),
+          )
+        ),
+
+        body:Center(child: Text(
+          "A drawer is an invisible sde screen"
+        ),),
+        drawer: Drawer(
+          child: ListView(
+            children: [ 
+               DrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.green,
+              ),
+              child: Text(
+                "Drawer Header",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20
+                ),
+              ),
+              
+            ),
+
+            ListTile(
+              title: Text("Account"),
+              leading: Icon(Icons.account_balance),
+              onTap: (){
+                Navigator.pop(context);
+              }
+            ),
+            
+
+            ],
+          ),
+        ),
+
       ),
     );
   }
