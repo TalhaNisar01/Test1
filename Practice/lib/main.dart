@@ -715,3 +715,57 @@ class MyApp extends StatelessWidget {
 */
 
 
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Box Decoration Demo'),
+        ),
+        body: Center(
+          
+          child: Container(
+            width: 200,
+            height: 200,
+            decoration: BoxDecoration(
+              color: Colors.blue, // Background color of the container
+              borderRadius: BorderRadius.circular(20), // Rounded corners
+              border: Border.all(
+                color: Colors.black, // Border color
+                width: 2.0, // Border width
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.5), // Shadow color
+                  spreadRadius: 5, // Spread radius
+                  blurRadius: 7, // Blur radius
+                  offset: Offset(0, 3), // Offset of the shadow
+                ),
+              ],
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [Colors.blue, Colors.green], // Gradient colors
+              ),
+            ),
+            child: Center(
+              child: Text(
+                'Box Decoration',
+                style: TextStyle(
+                  color: Colors.white, // Text color
+                  fontSize: 20.0, // Font size
+                  fontWeight: FontWeight.bold, // Font weight
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
