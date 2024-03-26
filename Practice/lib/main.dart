@@ -668,7 +668,46 @@ MaterialApp gfgApp() {
 
 
 
+void main() {
+  runApp(MyApp());
+}
 
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Text Style Demo'),
+        ),
+        body: Center(
+          child: Text(
+            'Hello, Flutter!',
+            style: TextStyle(
+              fontSize: 24.0, // Font size in logical pixels
+              fontWeight: FontWeight.bold, // FontWeight.bold or FontWeight.normal
+              fontStyle: FontStyle.italic, // FontStyle.italic or FontStyle.normal
+              color: Colors.blue, // Text color
+              letterSpacing: 1.5, // Spacing between characters
+              wordSpacing: 2.0, // Spacing between words
+              fontFamily: 'Roboto', // Font family
+              decoration: TextDecoration.underline, // Text decoration
+              decorationColor: Colors.red, // Color of text decoration
+              decorationStyle: TextDecorationStyle.double, // Style of text decoration
+              shadows: [
+                Shadow(
+                  color: Colors.black,
+                  offset: Offset(2, 2),
+                  blurRadius: 3.0,
+                ),
+              ], // Text shadows
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
 
 
 
