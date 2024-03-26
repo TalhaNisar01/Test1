@@ -712,7 +712,7 @@ class MyApp extends StatelessWidget {
 
 
 
-*/
+
 
 
 void main() {
@@ -769,3 +769,89 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+
+
+
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Card Demo'),
+        ),
+        body: Center(
+            child: Card(
+          elevation: 8,
+          margin: EdgeInsets.all(16),
+          shape:RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15.0),
+            side: BorderSide(color: Colors.red, width: 2),
+          ),
+          shadowColor: Colors.blue,
+          clipBehavior: Clip.antiAlias,
+          semanticContainer: true,
+          //semanticLabel: 'Card with important information',
+          child: Container(
+            padding: EdgeInsets.all(20),
+            child: Text('Hello, Card!'),
+          ),
+        )),
+      ),
+    );
+  }
+}
+
+
+
+
+
+class MyImageWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Image Widget Example'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image(
+              image: AssetImage('assets/image.png'), // ImageProvider for your image
+              width: 200, // Width of the image
+              height: 200, // Height of the image
+              fit: BoxFit.cover, // How the image should be inscribed into the space
+              alignment: Alignment.center, // Alignment of the image
+              repeat: ImageRepeat.repeat, // How the image should repeat
+              semanticLabel: 'A sample image', // Description for accessibility
+              excludeFromSemantics: false, // Whether to exclude from semantics
+              color: Colors.blue, // Color to apply as a tint to the image
+              colorBlendMode: BlendMode.srcOver, // Blend mode for applying color
+              filterQuality: FilterQuality.high, // Quality of the image filter
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+void main() {
+  runApp(MaterialApp(
+    home: MyImageWidget(),
+  ));
+}
+
+
+
+*/
+
+
+
