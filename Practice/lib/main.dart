@@ -664,7 +664,7 @@ MaterialApp gfgApp() {
 }
 
 
-*/
+
 
 
 
@@ -686,14 +686,14 @@ class MyApp extends StatelessWidget {
             style: TextStyle(
               fontSize: 24.0, // Font size in logical pixels
               fontWeight: FontWeight.bold, // FontWeight.bold or FontWeight.normal
-              fontStyle: FontStyle.italic, // FontStyle.italic or FontStyle.normal
+              fontStyle: FontStyle.normal, // FontStyle.italic or FontStyle.normal
               color: Colors.blue, // Text color
-              letterSpacing: 1.5, // Spacing between characters
+              letterSpacing: 2.5, // Spacing between characters
               wordSpacing: 2.0, // Spacing between words
               fontFamily: 'Roboto', // Font family
               decoration: TextDecoration.underline, // Text decoration
-              decorationColor: Colors.red, // Color of text decoration
-              decorationStyle: TextDecorationStyle.double, // Style of text decoration
+              decorationColor: Colors.green, // Color of text decoration
+              decorationStyle: TextDecorationStyle.solid, // Style of text decoration
               shadows: [
                 Shadow(
                   color: Colors.black,
@@ -710,5 +710,8 @@ class MyApp extends StatelessWidget {
 }
 
 
+
+
+*/
 
 
