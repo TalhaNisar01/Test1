@@ -851,7 +851,107 @@ void main() {
 
 
 
+
+
+
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData( // Define the theme
+        primaryColor: Colors.blue, // Primary color for the app
+        //accentColor: Colors.orange, // Accent color for buttons, etc.
+        fontFamily: 'Roboto', // Default font family
+        textTheme: TextTheme( // Text styles
+          headline1: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
+          bodyText1: TextStyle(fontSize: 16.0),
+        ),
+      ),
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Theme Example'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'This is a sample text.',
+              style: Theme.of(context).textTheme.headline1,
+            ),
+            ElevatedButton(
+              onPressed: () {},
+              child: Text('Button'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
 */
 
 
+void main() {
+  runApp(MyApp());
+}
 
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // Define custom theme
+    ThemeData customTheme = ThemeData.dark().copyWith(
+      primaryColor: Colors.green, // Change the primary color
+      //accentColor: Colors.yellow, // Change the accent color
+      textTheme: TextTheme( // Change text styles
+        headline1: TextStyle(fontSize: 28.0),
+        bodyText1: TextStyle(fontSize: 18.0),
+      ),
+    );
+
+    return MaterialApp(
+      theme: customTheme, // Apply custom theme
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Custom Theme Example'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'This is a sample text with custom theme.',
+              style: Theme.of(context).textTheme.headline1,
+            ),
+            ElevatedButton(
+              onPressed: () {},
+              child: Text('Button'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
