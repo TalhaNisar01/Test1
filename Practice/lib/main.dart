@@ -665,7 +665,7 @@ MaterialApp gfgApp() {
 
 
 
-
+/////////////////////////////////////////////////////////////
 
 
 void main() {
@@ -903,7 +903,63 @@ class MyHomePage extends StatelessWidget {
   }
 }
 
-*/
+
+
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // Define custom theme
+    ThemeData customTheme = ThemeData.light().copyWith(
+      primaryColor: Colors.green, // Change the primary color
+      //accentColor: Colors.yellow, // Change the accent color
+      textTheme: TextTheme( // Change text styles
+        headline1: TextStyle(fontSize: 28.0),
+        bodyText1: TextStyle(fontSize: 18.0),
+        headline2:TextStyle(fontSize: 20,fontStyle: FontStyle.italic),
+      ),
+    );
+
+    return MaterialApp(
+      theme: customTheme, // Apply custom theme
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Custom Theme Example'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'This is a sample text with custom theme.',
+              style: Theme.of(context).textTheme.headline2,
+            ),
+            ElevatedButton(
+              onPressed: () {},
+              child: Text('Button'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+
+
+
 
 
 void main() {
@@ -920,6 +976,17 @@ class MyApp extends StatelessWidget {
       textTheme: TextTheme( // Change text styles
         headline1: TextStyle(fontSize: 28.0),
         bodyText1: TextStyle(fontSize: 18.0),
+      ),
+      appBarTheme: AppBarTheme( // Customize app bar
+        backgroundColor: Colors.blueGrey,
+        elevation: 0,
+        centerTitle: true,
+        
+      ),
+      buttonTheme: ButtonThemeData( // Customize buttons
+        buttonColor: Colors.red,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
+        textTheme: ButtonTextTheme.primary,
       ),
     );
 
@@ -955,3 +1022,11 @@ class MyHomePage extends StatelessWidget {
     );
   }
 }
+
+
+
+*/
+
+
+
+
