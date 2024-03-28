@@ -1185,3 +1185,46 @@ class MyApp extends StatelessWidget {
 
 
 */
+
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.blue, // Set Scaffold background color
+      appBar: AppBar(
+        title: Text('Background Color Example'),
+      ),
+      body: Center(
+        child: Container(
+          width: 200,
+          height: 200,
+          color: Colors.white, // Set Container background color
+          child: Center(
+            child: Text(
+              'Container with white background',
+              style: TextStyle(
+                color: Colors.black,
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
