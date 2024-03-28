@@ -1184,7 +1184,6 @@ class MyApp extends StatelessWidget {
 }
 
 
-*/
 
 
 void main() {
@@ -1204,9 +1203,11 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue, // Set Scaffold background color
+      backgroundColor: Colors.blue, 
+      // Set Scaffold background color
       appBar: AppBar(
         title: Text('Background Color Example'),
+        backgroundColor: Colors.green,
       ),
       body: Center(
         child: Container(
@@ -1218,6 +1219,7 @@ class MyHomePage extends StatelessWidget {
               'Container with white background',
               style: TextStyle(
                 color: Colors.black,
+                backgroundColor: Colors.red,
               ),
             ),
           ),
@@ -1227,4 +1229,6 @@ class MyHomePage extends StatelessWidget {
   }
 }
 
+
+*/
 
