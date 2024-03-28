@@ -1025,8 +1025,147 @@ class MyHomePage extends StatelessWidget {
 
 
 
+
+
+
+
+
+////write a dart code to set up a custom app theme with background color of orange and range of 444 with title midterm exams in capital
+
+
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // Define custom theme
+    ThemeData customTheme = ThemeData.dark().copyWith(
+      scaffoldBackgroundColor: Colors.orange, // Set background color to orange
+      primaryColor: Color(0xFF444444), // Set primary color to #444444
+      appBarTheme: AppBarTheme( // Customize app bar
+        centerTitle: true,
+        titleTextStyle: TextStyle(
+          fontSize: 24.0,
+          fontWeight: FontWeight.bold,
+          color: Colors.white,
+        ),
+      ),
+    );
+
+    return MaterialApp(
+      theme: customTheme, // Apply custom theme
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('MIDTERM EXAMS',style: TextStyle(
+          
+        ),), // Title in capital letters
+      ),
+      body: Center(
+
+        child: Text(
+            'Custom App Theme Example',
+          style: TextStyle(
+            fontSize: 20.0,
+            color: Colors.white,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
+
+
+
+///write code to style the body text widget with following properties
+//set font size to 23
+//set font color to purple
+
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Styling Body Text'),
+        ),
+        body: Center(
+          child: Text(
+            'Body Text',
+            style: TextStyle(
+              fontSize: 23, // Set font size to 23
+              color: Colors.purple, // Set font color to purple
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
+
+
+
+
+//create an application according to the mentioned points below
+//1)set the background color of Appbar and scaffold to purple
+//2)Load the image from assets and apply box decoration.The image need to fit in the box.
+//3)Borders around the image should be in the black color having width of 6 with rounded corners.
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.purple, // Set background color of AppBar to purple
+          title: Text('Image App'),
+        ),
+        backgroundColor: Colors.purple, // Set background color of Scaffold to purple
+        body: Center(
+          child: Container(
+            width: 300,
+            height: 300,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              border: Border.all(
+                color: Colors.black, // Set border color to black
+                width: 6, // Set border width to 6
+              ),
+              borderRadius: BorderRadius.circular(15), // Set rounded corners
+              image: DecorationImage(
+                image: AssetImage('assets/image.jpg'), // Load image from assets
+                fit: BoxFit.cover, // Fit image inside the container
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
 */
-
-
-
-
