@@ -154,6 +154,22 @@ class MyApp extends StatelessWidget {
 
 
 
+
+
+Colors.green[400]: This is called using a predefined color from the Material Design color palette with a shade specified by the index. In this case, it selects the 400 shade of green.
+
+Colors.blue[900]: Similar to the previous one, it selects the 900 shade of blue.
+
+const Color(0xFF42A5F5): This is using the hexadecimal format with the alpha (opacity) value followed by the RGB values. It's commonly known as the ARGB format.
+
+const Color.fromARGB(0xFF, 0x42, 0xA5, 0xF5): This is also in ARGB format, where the alpha value is specified separately from the RGB values.
+
+const Color.fromARGB(255, 66, 165, 245): Another example of the ARGB format, where the alpha value is given as 255.
+
+Color.fromARGB(255, 14, 106, 181): This is specifying the color using RGB values with opacity.
+
+
+
 class DemoPage extends StatelessWidget {
    launchURL() {
      launch('https://flutter.dev');
