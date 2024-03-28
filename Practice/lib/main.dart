@@ -1230,5 +1230,66 @@ class MyHomePage extends StatelessWidget {
 }
 
 
+
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Button Examples'),
+        ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ElevatedButton(
+                 onPressed: () {
+                  // Add onPressed action here
+                },
+                child: Text('Elevated Button'),
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.blue, // Button background color
+                  onPrimary: Colors.white, // Text color
+                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10), // Button padding
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10), // Button border radius
+                  ),
+                  textStyle: TextStyle(
+                    fontSize: 16, // Text font size
+                    fontWeight: FontWeight.bold, // Text font weight
+                  ),
+                  
+                ),
+              
+              ),
+              SizedBox(height: 20),
+              FloatingActionButton(
+                onPressed: () {
+                  // Add onPressed action here
+                },
+                child: Icon(Icons.add), // Icon for the button
+                backgroundColor: Colors.green, // Button background color
+                //foregroundColor: Colors.white, // Icon color
+                elevation: 5, // Elevation of the button
+                splashColor: Colors.blue, // Splash color when pressed
+                tooltip: 'Floating Action Button', // Tooltip text
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
 */
+
+
 
