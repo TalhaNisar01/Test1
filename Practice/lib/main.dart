@@ -248,7 +248,8 @@ class _DropdownDemoState extends State<DropdownDemo> {
                       value: value,
                       child: Text(value,style: TextStyle(
                         color: selection,
-                      ),),
+                      ),
+                      ),
                     ),
                   ).toList(),
             ),
@@ -1331,3 +1332,33 @@ class FirstPage extends StatelessWidget {
 
 
 */
+
+
+
+
+
+void main(){
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Practice Questions',
+    );
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
