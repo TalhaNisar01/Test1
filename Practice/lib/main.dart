@@ -1331,7 +1331,7 @@ class FirstPage extends StatelessWidget {
 }
 
 
-*/
+
 
 
 
@@ -1348,10 +1348,50 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Practice Questions',
+      debugShowCheckedModeBanner:false,
+      home:HomePage()
     );
   }
 }
 
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.blue,
+        title:Text(
+          "Practice Question",
+          style: TextStyle(color:Colors.white),
+        )
+      ),
+
+     body: Center(
+      child:Column( 
+      children:[
+       Container(
+        height: 100,
+        width: 100,
+        decoration: BoxDecoration(
+         borderRadius: BorderRadius.circular(20) ,
+         border: Border.all(color: Colors.black54),
+         image: DecorationImage(image: NetworkImage("https://www.bing.com/ck/a?!&&p=65768a2b56a148f9JmltdHM9MTcxMTc1NjgwMCZpZ3VpZD0yYmRmN2Y3Ny1mZWFmLTYwMzktMDg3Yi02YjVkZmZkODYxZmQmaW5zaWQ9NTQ1Nw&ptn=3&ver=2&hsh=3&fclid=2bdf7f77-feaf-6039-087b-6b5dffd861fd&u=a1L2ltYWdlcy9zZWFyY2g_cT1pbWFnZXMmaWQ9MkY1OUIxRUZCRUM0MjMzQTExMjMwMkUxRkI3NTdEQzg3NDY3MUZCNCZGT1JNPUlRRlJCQQ&ntb=1"),
+         fit: BoxFit.cover)
+        ),
+       
+       ),
+     ])
+     
+     )
+     
+
+    );
+  }
+}
+*/
 
 
 
