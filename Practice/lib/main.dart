@@ -1391,11 +1391,44 @@ class HomePage extends StatelessWidget {
     );
   }
 }
+
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Linear Progress Indicator'),
+          backgroundColor: Colors.amber,
+          bottom: PreferredSize(
+          preferredSize: Size.fromHeight(12.0),
+            child: LinearProgressIndicator(), // This inserts the linear progress indicator into the app bar
+          ),
+        ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children:[
+              Text('Loading...'),
+              SizedBox(height: 20),
+              LinearProgressIndicator(
+                color: Colors.red,
+              ), // This creates the linear progress indicator
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 */
-
-
-
-
 
 
 
