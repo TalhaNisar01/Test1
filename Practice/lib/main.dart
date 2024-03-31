@@ -1428,10 +1428,39 @@ class MyApp extends StatelessWidget {
   }
 }
 
+
+
+void main(){
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "Stepper Practice",
+      home: Scaffold(
+        backgroundColor: Colors.lightBlue,
+        appBar: AppBar(
+          backgroundColor: Colors.amber,
+          ),
+        body:Center(
+          child: Stepper(
+            steps: [
+              Step(title:Text("Step 1"), content: Text("Content of step 1")),
+              Step(title:Text("Step 2"), content: Text("Content of step 2")),
+              Step(title:Text("Step 3"), content: Text("Content of step 3")),
+
+            ],
+          ),  
+        )
+      ),
+    );
+  }
+}
+
+
+
 */
-
-
-
-
-
-
