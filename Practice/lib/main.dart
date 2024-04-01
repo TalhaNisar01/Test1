@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/SecondPage.dart';
 //import 'package:url_launcher/url_launcher.dart';
 //import 'package:url_launcher/url_launcher.dart';
 /*
@@ -1621,34 +1620,6 @@ class HomePage extends StatelessWidget {
 
 
 
-*/
-
-
-
-
-void main(){
-  runApp(MaterialApp(
-       title:"Practice Questions",
-       debugShowCheckedModeBanner:false,
-       theme:ThemeData(
-       primaryColor:Color(0xFF444444),
-       scaffoldBackgroundColor: Colors.orange,
-
-       appBarTheme: AppBarTheme(
-         backgroundColor: Colors.orange,
-         
-       ),
-
-       textTheme:TextTheme(
-        headline1:TextStyle(color:Colors.purple,fontSize:29)
-       ),
-       ),
-
-       home:HomePage()
-  )
-  );
-}
-
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -1675,4 +1646,59 @@ class _HomePageState extends State<HomePage> {
       )
     );
   }
+}*/
+
+
+
+
+
+
+
+
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Midterm Exams',
+      theme: ThemeData(
+        primaryColor:Color(0xFF444444),
+        scaffoldBackgroundColor: Colors.orange, // Setting background color to orange
+        appBarTheme: AppBarTheme(
+          backgroundColor: Colors.orange,
+         // centerTitle: true,
+          titleTextStyle: TextStyle(
+            fontSize: 44, // Setting font size to 44
+            //textTransform: TextTransform.uppercase, // Convert text to uppercase
+          ),
+        ),
+      ),
+      home: HomePage(),
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Midterm Exams'.toUpperCase()),
+      ),
+      body: Center(
+        child: Text(
+          'Welcome to Midterm Exams!',
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+    );
+  }
+
 }
