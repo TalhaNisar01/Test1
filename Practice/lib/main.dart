@@ -1595,6 +1595,20 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.blue,
+      appBar:AppBar(
+        backgroundColor: Colors.white,
+        title:Text("Talha Nisar",
+        style:TextStyle(color: Colors.blue)
+        )
+      ),
+       body: Center(
+        child:Text(
+          "Talha Nisar",
+          style:TextStyle(
+            
+          )
+        )
+       )
     );
   }
 }
