@@ -1646,7 +1646,7 @@ class _HomePageState extends State<HomePage> {
       )
     );
   }
-}*/
+}
 
 
 
@@ -1701,4 +1701,32 @@ class HomePage extends StatelessWidget {
     );
   }
 
+}
+
+
+*/
+
+
+
+void main(){
+  runApp(MaterialApp(
+      title:"Hi!",
+      home:HomePage()
+  ));
+}
+
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      
+    );
+  }
 }
