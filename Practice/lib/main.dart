@@ -1704,8 +1704,6 @@ class HomePage extends StatelessWidget {
 }
 
 
-*/
-
 
 
 void main(){
@@ -1723,10 +1721,118 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+    String email="";
+    String pass="";
+  TextEditingController emailcontroller=TextEditingController();
+  TextEditingController passwordcontroller=TextEditingController();
+
+    void userauth() {
+  email = emailcontroller.text;
+  pass = passwordcontroller.text;
+  if (email == "hello@gmail.com" && pass == "12") {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => SecondPage()), // Specify the destination route
+    );
+  }
+}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
+      body: Column(
+        children:[
+          Text("Email"),
+          TextField(
+           controller:emailcontroller,
+           decoration: InputDecoration(
+            hintText:"Input your Email",
+           ),
+          ),
+          SizedBox(height:20),
+           Text("Password"),
+           
+          TextField(
+           controller:passwordcontroller,
+           decoration: InputDecoration(
+            hintText:"Input your Password",
+           ),
+          ),
+
+          TextButton(onPressed:userauth ,child: Text("Login"),)
+        ]
+      ),
     );
+  }
+}
+
+
+
+
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Custom Theme Example',
+      theme: ThemeData(
+        primaryColor: Colors.green, // Sets the primary color of the app
+        //accentColor: Colors.blue, // Sets the accent color
+        appBarTheme: AppBarTheme(
+          backgroundColor: Colors.orange, // Sets the background color of the app bar
+          foregroundColor: const Color.fromARGB(255, 44, 30, 30), // Sets the color of text and icons in the app bar
+          centerTitle: true, // Specifies whether the title should be centered
+          titleTextStyle: TextStyle(
+            fontSize: 24, // Sets the font size of the app bar title
+            fontWeight: FontWeight.bold, // Sets the font weight of the app bar title
+          ),
+          elevation: 0, // Sets the elevation (shadow) of the app bar
+        ),
+      ),
+      home: HomePage(),
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Custom Theme Example'.toUpperCase()), // Title displayed in the app bar
+      ),
+      body: Center(
+        child: Text(
+          'Welcome to Custom Theme Example!'.toUpperCase(),
+          style: TextStyle(
+            fontSize: 20,
+             // Uses the accent color defined in the theme
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
+*/
+
+void main(){
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home:HomePage(),
+  ));
+}
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
   }
 }
