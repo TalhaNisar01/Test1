@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/SecondPage.dart';
 //import 'package:url_launcher/url_launcher.dart';
 //import 'package:url_launcher/url_launcher.dart';
 /*
@@ -1575,7 +1576,7 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 
-*/
+
 
 
 void main(){
@@ -1614,6 +1615,64 @@ class HomePage extends StatelessWidget {
           ),
         )
        )
+    );
+  }
+}
+
+
+
+*/
+
+
+
+
+void main(){
+  runApp(MaterialApp(
+       title:"Practice Questions",
+       debugShowCheckedModeBanner:false,
+       theme:ThemeData(
+       primaryColor:Color(0xFF444444),
+       scaffoldBackgroundColor: Colors.orange,
+
+       appBarTheme: AppBarTheme(
+         backgroundColor: Colors.orange,
+         
+       ),
+
+       textTheme:TextTheme(
+        headline1:TextStyle(color:Colors.purple,fontSize:29)
+       ),
+       ),
+
+       home:HomePage()
+  )
+  );
+}
+
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar:AppBar(
+        title:Text("Talha Nisar")
+      ),
+      body:Center(
+        child:ElevatedButton(
+          onPressed:(){
+           Navigator.push(
+            context,MaterialPageRoute(builder:(context)=>SecondPage())
+           );
+          },
+          child:Text("Show Second Page")
+        )
+      )
     );
   }
 }
