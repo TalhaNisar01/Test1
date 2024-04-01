@@ -1824,6 +1824,23 @@ class HomePage extends StatelessWidget {
 void main(){
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
+
+    theme:ThemeData(
+      primaryColor:Colors.blue ,
+      scaffoldBackgroundColor:Colors.black,
+      //fontFamily:"Arial",
+      appBarTheme:AppBarTheme(
+        backgroundColor: Colors.blue,
+        centerTitle:true,
+        titleTextStyle:TextStyle(
+          color:Colors.amber,
+          fontSize:30
+        )
+      ),
+      textTheme:TextTheme(
+        headline1:TextStyle(color:Colors.amber)
+      )
+    ),
     home:HomePage(),
   ));
 }
@@ -1833,6 +1850,11 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(title:Text("Custom Theme".toUpperCase())),
+      body: Center(
+
+      )
+    );
   }
 }
