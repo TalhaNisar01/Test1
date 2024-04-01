@@ -1879,8 +1879,8 @@ class MyApp extends StatelessWidget {
       title: "Usman 1361",
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor:Colors.green,
-        primarySwatch: Colors.deepPurple,
+        //primaryColor:Colors.green,
+        primarySwatch: Colors.amber,
         textTheme: TextTheme(
             headline5: TextStyle(fontSize: 20.0, color: Colors.pink),
             subtitle2: TextStyle(
@@ -1891,7 +1891,7 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Usman 1361"),
+          title: Text("Usman 1361".toUpperCase()),
         ),
         body: Center(
           child: Container(
@@ -1902,6 +1902,7 @@ class MyApp extends StatelessWidget {
                     "Usman 1361",
                     style: Theme.of(context).textTheme.headline5!.copyWith(
                           color: Colors.yellow,
+
                         ),
                   ),
                   Text(
@@ -1919,3 +1920,6 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+
+
