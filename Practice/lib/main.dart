@@ -1594,19 +1594,24 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue,
+      backgroundColor: Colors.purple,
       appBar:AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.purple,
         title:Text("Talha Nisar",
-        style:TextStyle(color: Colors.blue)
+        style:TextStyle(color: Colors.amber)
         )
       ),
        body: Center(
-        child:Text(
-          "Talha Nisar",
-          style:TextStyle(
-            
-          )
+        child:Container(
+          width:200,
+          height:200,
+          decoration: BoxDecoration(
+            borderRadius:BorderRadius.circular(12),
+            border:Border.all(color:Colors.black,width:6),
+            image:DecorationImage(image: AssetImage(""),
+            fit:BoxFit.cover,
+            )
+          ),
         )
        )
     );
