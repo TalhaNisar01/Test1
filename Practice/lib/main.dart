@@ -1919,7 +1919,7 @@ class MyApp extends StatelessWidget {
 
 
 
-*/
+
 
 
 
@@ -1991,3 +1991,63 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+
+
+
+
+
+
+
+void main(){
+  runApp( MaterialApp(
+    title:"Theme Practice",
+
+    theme:ThemeData(
+      primarySwatch:Colors.amber ,
+       textTheme:TextTheme(
+
+        headline1:TextStyle(color:Colors.green,fontSize:34),
+        headline2:TextStyle(color:Colors.purple,fontSize:45)
+       ),
+
+       appBarTheme:AppBarTheme(
+        centerTitle:true,
+          backgroundColor:Colors.amber,
+          titleTextStyle:TextStyle(
+            fontSize:34,
+            
+          )
+       )
+
+    ),
+    home:HomePage(),
+
+    
+  ));
+}
+
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar:AppBar(
+         title:Text("Talha Nisar-1376".toUpperCase())
+      ),
+      body:Center(child: 
+      Text("Talha Nisar",
+         style:Theme.of(context).textTheme.headline2!.copyWith(
+          color:Colors.black,
+          fontSize: 20
+         )
+      ),)
+    );
+  }
+}
+
+
+
+*/
