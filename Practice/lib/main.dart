@@ -1865,3 +1865,57 @@ class HomePage extends StatelessWidget {
 
 
 
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "Usman 1361",
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primaryColor:Colors.green,
+        primarySwatch: Colors.deepPurple,
+        textTheme: TextTheme(
+            headline5: TextStyle(fontSize: 20.0, color: Colors.pink),
+            subtitle2: TextStyle(
+                fontSize: 36.0,
+                fontStyle: FontStyle.italic,
+                color: Colors.blue)),
+        useMaterial3: false,
+      ),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("Usman 1361"),
+        ),
+        body: Center(
+          child: Container(
+            child: Center(
+              child: Column(
+                children: [
+                  Text(
+                    "Usman 1361",
+                    style: Theme.of(context).textTheme.headline5!.copyWith(
+                          color: Colors.yellow,
+                        ),
+                  ),
+                  Text(
+                    "Usman 1361",
+                    style: Theme.of(context).textTheme.subtitle2!.copyWith(
+                          color: Colors.red,
+                        ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
