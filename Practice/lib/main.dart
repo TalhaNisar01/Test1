@@ -2073,7 +2073,7 @@ class MyApp extends StatelessWidget {
           headline4: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
           headline5: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
           headline6: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-          subtitle1: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          subtitle1: TextStyle(fontSize: 20, fontWeight: FontWeight.normal),
           subtitle2: TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
           bodyText1: TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
           bodyText2: TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
@@ -2100,7 +2100,7 @@ class HomePage extends StatelessWidget {
           children: [
             Text(
               'Headline 1',
-              style: Theme.of(context).textTheme.headline1,
+              style: Theme.of(context).textTheme.headline1!.copyWith(color:Colors.green),
             ),
             Text(
               'Headline 2',
