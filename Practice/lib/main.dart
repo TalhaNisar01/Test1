@@ -2067,13 +2067,13 @@ class MyApp extends StatelessWidget {
       title: 'Text Theme Example',
       theme: ThemeData(
         textTheme: TextTheme(
-          headline1: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          headline1: TextStyle(fontSize: 24, fontWeight: FontWeight.bold,color:Colors.blue),
           headline2: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
           headline3: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
           headline4: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
           headline5: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
           headline6: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-          subtitle1: TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
+          subtitle1: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
           subtitle2: TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
           bodyText1: TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
           bodyText2: TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
