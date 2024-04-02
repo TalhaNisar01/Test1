@@ -2100,7 +2100,17 @@ class HomePage extends StatelessWidget {
           children: [
             Text(
               'Headline 1',
-              style: Theme.of(context).textTheme.headline1!.copyWith(color:Colors.green),
+              style: Theme.of(context).textTheme.headline1!.copyWith(color:Colors.green,fontSize:20,fontStyle:FontStyle.italic,decoration:TextDecoration.underline,
+              decorationColor:Colors.green,
+              decorationStyle: TextDecorationStyle.wavy,
+              shadows:[
+                Shadow(
+                  color:Colors.green,
+                  blurRadius:24,
+                  offset:Offset(1.2,3.4)
+                )
+              ]
+              ),
             ),
             Text(
               'Headline 2',
