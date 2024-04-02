@@ -867,7 +867,7 @@ void main() {
 }
 
 
-
+  
 
 
 
@@ -1620,6 +1620,10 @@ class HomePage extends StatelessWidget {
 
 
 
+
+
+----------------------------------------------------------
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -2051,3 +2055,105 @@ class HomePage extends StatelessWidget {
 
 
 */
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Text Theme Example',
+      theme: ThemeData(
+        textTheme: TextTheme(
+          headline1: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          headline2: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          headline3: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          headline4: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          headline5: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          headline6: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          subtitle1: TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
+          subtitle2: TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
+          bodyText1: TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
+          bodyText2: TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
+          caption: TextStyle(fontSize: 12, fontWeight: FontWeight.normal),
+          button: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          overline: TextStyle(fontSize: 10, fontWeight: FontWeight.normal),
+        ),
+      ),
+      home: HomePage(),
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Text Theme Example'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'Headline 1',
+              style: Theme.of(context).textTheme.headline1,
+            ),
+            Text(
+              'Headline 2',
+              style: Theme.of(context).textTheme.headline2,
+            ),
+            Text(
+              'Headline 3',
+              style: Theme.of(context).textTheme.headline3,
+            ),
+            Text(
+              'Headline 4',
+              style: Theme.of(context).textTheme.headline4,
+            ),
+            Text(
+              'Headline 5',
+              style: Theme.of(context).textTheme.headline5,
+            ),
+            Text(
+              'Headline 6',
+              style: Theme.of(context).textTheme.headline6,
+            ),
+            Text(
+              'Subtitle 1',
+              style: Theme.of(context).textTheme.subtitle1,
+            ),
+            Text(
+              'Subtitle 2',
+              style: Theme.of(context).textTheme.subtitle2,
+            ),
+            Text(
+              'Body Text 1',
+              style: Theme.of(context).textTheme.bodyText1,
+            ),
+            Text(
+              'Body Text 2',
+              style: Theme.of(context).textTheme.bodyText2,
+            ),
+            Text(
+              'Caption',
+              style: Theme.of(context).textTheme.caption,
+            ),
+            Text(
+              'Button',
+              style: Theme.of(context).textTheme.button,
+            ),
+            Text(
+              'Overline',
+              style: Theme.of(context).textTheme.overline,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
