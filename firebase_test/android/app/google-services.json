@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "811632534626",
+    "project_id": "dum-12",
+    "storage_bucket": "dum-12.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:811632534626:android:8269c5c9bf991b00f39d3b",
+        "android_client_info": {
+          "package_name": "com.example.firebase_test"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6Lws-3DFa-575ZkIem95I2pbJ1Mvan1g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
