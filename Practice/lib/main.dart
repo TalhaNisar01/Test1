@@ -2167,6 +2167,165 @@ class HomePage extends StatelessWidget {
   }
 }
 
+
+
+
+
+
+enum AllergySymptom { runnyNose, itching, nasalIrritation, sneezing, wateryEyes }
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Allergy Symptom Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: AllergySymptomPage(),
+    );
+  }
+}
+
+class AllergySymptomPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Allergy Symptoms'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children:[
+            Text(
+              'Select your allergy symptoms:',
+              style: TextStyle(fontSize: 18),
+            ),
+            SizedBox(height: 20),
+            // Use DropdownButton to select allergy symptoms
+            DropdownButton<AllergySymptom>(
+              value: AllergySymptom.runnyNose,
+              onChanged: (symptom) {
+                print('Selected symptom: $symptom');
+              },
+              items: AllergySymptom.values.map((symptom) {
+                return DropdownMenuItem<AllergySymptom>(
+                  value: symptom,
+                  child: Text(symptom.toString().split('.').last),
+                );
+              }).toList(),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+
+
+// Define an enum for days of the week
+enum DayOfWeek {
+  monday,
+  tuesday,
+  wednesday,
+  thursday,
+  friday,
+  saturday,
+  sunday
+}
+
+// Function to get the full name of a day based on its enum value
+String getDayName(DayOfWeek day) {
+  switch (day) {
+    case DayOfWeek.monday:
+      return "Monday";
+    case DayOfWeek.tuesday:
+      return "Tuesday";
+    case DayOfWeek.wednesday:
+      return "Wednesday";
+    case DayOfWeek.thursday:
+      return "Thursday";
+    case DayOfWeek.friday:
+      return "Friday";
+    case DayOfWeek.saturday:
+      return "Saturday";
+    case DayOfWeek.sunday:
+      return "Sunday";
+    default:
+      return "Invalid day";
+  }
+}
+
+void main() {
+  // Example usage
+  DayOfWeek today = DayOfWeek.friday;
+  print("Today is ${getDayName(today)}");
+}
+
 */
 
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Slider Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: SliderDemo(),
+    );
+  }
+}
+
+class SliderDemo extends StatefulWidget {
+  @override
+  _SliderDemoState createState() => _SliderDemoState();
+}
+
+class _SliderDemoState extends State<SliderDemo> {
+  double _value = 0.0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Slider Demo'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              'Value: ${_value.toStringAsFixed(3)}',
+              style: TextStyle(fontSize: 20.0),
+            ),
+            SizedBox(height: 20.0),
+            Slider(
+              value: _value,
+              min: 0.0,
+              max: 100.0,
+              divisions: 25, //matlab itni wo websites par division kry ga
+              onChanged: (newValue) {
+                setState(() {
+                  _value = newValue;
+                });
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
 
