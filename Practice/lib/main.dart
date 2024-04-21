@@ -2268,7 +2268,7 @@ void main() {
   print("Today is ${getDayName(today)}");
 }
 
-*/
+
 
 
 void main() {
@@ -2329,3 +2329,4 @@ class _SliderDemoState extends State<SliderDemo> {
   }
 }
 
+*/
