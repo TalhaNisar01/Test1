@@ -2334,7 +2334,6 @@ class _SliderDemoState extends State<SliderDemo> {
 
 
 
-/*
 void main() {
   runApp(MaterialApp(
     home: CategoryPage(),
@@ -2487,7 +2486,7 @@ Widget buildCard({required String burgerName, required String imageUrl}) {
 }
 
 
-
+/*
 
 void main(){
   runApp(
@@ -2548,7 +2547,7 @@ class HomePage extends StatelessWidget {
 */
 
 
-
+/*
 void main (){
   runApp(
     MaterialApp(
@@ -2591,3 +2590,5 @@ Container(
     );
   }
 }
+
+*/
