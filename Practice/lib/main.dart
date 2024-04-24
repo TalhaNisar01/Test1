@@ -2486,3 +2486,15 @@ Widget buildCard({required String burgerName, required String imageUrl}) {
 }
 
 */
+
+
+void main(){
+  runApp(
+    MaterialApp(
+      debugShowCheckedModeBanner: false,
+
+      title:'Practice'
+      
+    )
+  );
+}
