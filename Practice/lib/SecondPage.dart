@@ -59,7 +59,7 @@ class SecondPage extends StatelessWidget {
             child: Align(
               alignment: Alignment.topRight,
               child: IconButton(
-                icon: Icon(Icons.favorite),
+                icon: Icon(Icons.favorite_outlined,color:Colors.white),
                 onPressed: () {},
               ),
             ),
