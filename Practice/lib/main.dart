@@ -2330,3 +2330,89 @@ class _SliderDemoState extends State<SliderDemo> {
 }
 
 */
+
+
+
+class CategoryPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.orange,
+        title: Text(
+          "Category",
+          style: TextStyle(color: Colors.white),
+        ),
+        centerTitle: true,
+      ),
+      body: ListView.builder(
+        itemCount: 3, // Total number of rows (each row contains two cards)
+        itemBuilder: (context, index) {
+          return Row(
+            children: [
+              Expanded(
+                child: buildCard(),
+              ),
+              SizedBox(width: 8), // Adjust spacing between cards
+              Expanded(
+                child: buildCard(),
+              ),
+            ],
+          );
+        },
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: 0, // Current selected tab
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.category),
+            label: "Category",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.favorite),
+            label: "Favourites",
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget buildCard() {
+    return Card(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Image.network(
+            "https://static.fanpage.it/wp-content/uploads/sites/22/2020/03/iStock-1152247466.jpg",
+            height: 150,
+            fit: BoxFit.cover,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text("Burger Name"),
+                SizedBox(height: 8),
+                ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.orange,
+                    onPrimary: Colors.white,
+                  ),
+                  child: Text("Cart"),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+void main() {
+  runApp(MaterialApp(
+    home: CategoryPage(),
+  ));
+}
