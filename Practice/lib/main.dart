@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/SecondPage.dart';
+//import 'package:flutter_application_1/SecondPage.dart';
 //import 'package:flutter_application_1/SecondPage.dart';
 //import 'package:url_launcher/url_launcher.dart';
 //import 'package:url_launcher/url_launcher.dart';
@@ -2332,160 +2334,6 @@ class _SliderDemoState extends State<SliderDemo> {
 
 */
 
-
-
-void main() {
-  runApp(MaterialApp(
-    home: CategoryPage(),
-  ));
-}
-
-class CategoryPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.orange,
-        title: Text(
-          "Category",
-          style: TextStyle(color: Colors.white),
-        ),
-        centerTitle: true,
-      ),
-      body: ListView(
-        children: [
-          Row(
-            children: [
-              Expanded(
-                child: buildCard(
-                  burgerName: "Burger simple",
-                  imageUrl: "https://static.fanpage.it/wp-content/uploads/sites/22/2020/03/iStock-1152247466.jpg",
-                ),
-              ),
-              SizedBox(width: 8), // Adjust spacing between cards
-              Expanded(
-                child: buildCard(
-                  burgerName: "Burger fajita",
-                  imageUrl: "https://static.fanpage.it/wp-content/uploads/sites/22/2020/03/iStock-1152247466.jpg",
-                ),
-              ),
-            ],
-          ),
-          SizedBox(height: 8), // Adjust spacing between rows
-          Row(
-            children: [
-              Expanded(
-                child: buildCard(
-                  burgerName: "Burger deluxe",
-                  imageUrl: "https://static.fanpage.it/wp-content/uploads/sites/22/2020/03/iStock-1152247466.jpg",
-                ),
-              ),
-              SizedBox(width: 8), // Adjust spacing between cards
-              Expanded(
-                child: buildCard(
-                  burgerName: "Burger supreme",
-                  imageUrl: "https://static.fanpage.it/wp-content/uploads/sites/22/2020/03/iStock-1152247466.jpg",
-                ),
-              ),
-            ],
-          ),
-        ],
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 0, // Current selected tab
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.category),
-            label: "Category",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.favorite),
-            label: "Favourites",
-          ),
-        ],
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: Icon(Icons.home),
-      ),
-    );
-  }
-}
-
-Widget buildCard({required String burgerName, required String imageUrl}) {
-  return Container(
-    color: Colors.white, // Set white background color for the container
-    child: Card(
-      elevation: 4,
-      margin: EdgeInsets.all(20),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(12), // Rounded corners for the card
-      ),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Container(
-            height: 150,
-            width: double.infinity, // Make the image take full width of the card
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(12),
-                topRight: Radius.circular(12),
-                bottomLeft: Radius.circular(12), // Set bottomLeft and bottomRight to 0 to make them straight
-                bottomRight: Radius.circular(12),
-              ),
-              image: DecorationImage(
-                image: NetworkImage(imageUrl),
-                fit: BoxFit.cover,
-              ),
-            ),
-            child: Align(
-              alignment: Alignment.topRight,
-              child: IconButton(
-                icon: Icon(Icons.favorite, color: Colors.white),
-                onPressed: () {},
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(
-                  burgerName,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
-                  ),
-                ),
-                SizedBox(height: 8),
-                Container(
-                  width: 100, // Set width of the button
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      primary: Colors.orange,
-                      onPrimary: Colors.white,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8), // Rounded corners for the button
-                      ),
-                      padding: EdgeInsets.symmetric(vertical: 12), // Vertical padding for the button
-                    ),
-                    child: Text("Cart"),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    ),
-  );
-}
-
-
 /*
 
 void main(){
@@ -2592,3 +2440,187 @@ Container(
 }
 
 */
+
+void main(){
+  runApp(MaterialApp(
+    home: CategoryPage()
+  ));
+}
+
+class CategoryPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.orange,
+        title: Text(
+          "Category",
+          style: TextStyle(color: Colors.white),
+        ),
+        centerTitle: true,
+      ),
+      body: ListView(
+        children: [
+          Row(
+            children: [
+              Expanded(
+                child: buildCard(
+                  burgerName: "Burger simple",
+                  imageUrl:
+                      "https://static.fanpage.it/wp-content/uploads/sites/22/2020/03/iStock-1152247466.jpg",
+                  context: context,
+                ),
+              ),
+              SizedBox(width: 8), // Adjust spacing between cards
+              Expanded(
+                child: buildCard(
+                  burgerName: "Burger fajita",
+                  imageUrl:
+                      "https://static.fanpage.it/wp-content/uploads/sites/22/2020/03/iStock-1152247466.jpg",
+                  context: context,
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: 8), // Adjust spacing between rows
+          Row(
+            children: [
+              Expanded(
+                child: buildCard(
+                  burgerName: "Burger deluxe",
+                  imageUrl:
+                      "https://static.fanpage.it/wp-content/uploads/sites/22/2020/03/iStock-1152247466.jpg",
+                  context: context,
+                ),
+              ),
+              SizedBox(width: 8), // Adjust spacing between cards
+              Expanded(
+                child: buildCard(
+                  burgerName: "Burger supreme",
+                  imageUrl:
+                      "https://static.fanpage.it/wp-content/uploads/sites/22/2020/03/iStock-1152247466.jpg",
+                  context: context,
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: 0, // Current selected tab
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.category),
+            label: "Category",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.favorite),
+            label: "Favourites",
+          ),
+        ],
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.home),
+      ),
+    );
+  }
+}
+Widget buildCard(
+    {required String burgerName,
+    required String imageUrl,
+    required BuildContext context}) {
+  return Container(
+    color: Colors.white, // Set white background color for the container
+    child: Card(
+      elevation: 4,
+      margin: EdgeInsets.all(20),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12), // Rounded corners for the card
+      ),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) =>
+                      SecondPage(imageUrl: imageUrl, burgerName: burgerName),
+                ),
+              );
+            },
+            child: Container(
+              height: 150,
+              width:
+                  double.infinity, // Make the image take full width of the card
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(12),
+                  topRight: Radius.circular(12),
+                  bottomLeft: Radius.circular(
+                      12), // Set bottomLeft and bottomRight to 0 to make them straight
+                  bottomRight: Radius.circular(12),
+                ),
+                image: DecorationImage(
+                  image: NetworkImage(imageUrl),
+                  fit: BoxFit.cover,
+                ),
+              ),
+              child: Align(
+                alignment: Alignment.topRight,
+                child: IconButton(
+                  icon: Icon(Icons.favorite, color: Colors.white),
+                  onPressed: () {},
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  burgerName,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                SizedBox(height: 8),
+                Container(
+                  width: 100, // Set width of the button
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              SecondPage(imageUrl: imageUrl, burgerName: burgerName),
+                        ),
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.orange,
+                      onPrimary: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(
+                            8), // Rounded corners for the button
+                      ),
+                      padding: EdgeInsets.symmetric(
+                          vertical: 12), // Vertical padding for the button
+                    ),
+                    child: Text("Cart"),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    ),
+  );
+}
