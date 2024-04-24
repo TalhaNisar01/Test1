@@ -2333,6 +2333,13 @@ class _SliderDemoState extends State<SliderDemo> {
 
 
 
+/*
+void main() {
+  runApp(MaterialApp(
+    home: CategoryPage(),
+  ));
+}
+
 class CategoryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -2345,21 +2352,44 @@ class CategoryPage extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      body: ListView.builder(
-        itemCount: 3, // Total number of rows (each row contains two cards)
-        itemBuilder: (context, index) {
-          return Row(
+      body: ListView(
+        children: [
+          Row(
             children: [
               Expanded(
-                child: buildCard(),
+                child: buildCard(
+                  burgerName: "Burger simple",
+                  imageUrl: "https://static.fanpage.it/wp-content/uploads/sites/22/2020/03/iStock-1152247466.jpg",
+                ),
               ),
               SizedBox(width: 8), // Adjust spacing between cards
               Expanded(
-                child: buildCard(),
+                child: buildCard(
+                  burgerName: "Burger fajita",
+                  imageUrl: "https://static.fanpage.it/wp-content/uploads/sites/22/2020/03/iStock-1152247466.jpg",
+                ),
               ),
             ],
-          );
-        },
+          ),
+          SizedBox(height: 8), // Adjust spacing between rows
+          Row(
+            children: [
+              Expanded(
+                child: buildCard(
+                  burgerName: "Burger deluxe",
+                  imageUrl: "https://static.fanpage.it/wp-content/uploads/sites/22/2020/03/iStock-1152247466.jpg",
+                ),
+              ),
+              SizedBox(width: 8), // Adjust spacing between cards
+              Expanded(
+                child: buildCard(
+                  burgerName: "Burger supreme",
+                  imageUrl: "https://static.fanpage.it/wp-content/uploads/sites/22/2020/03/iStock-1152247466.jpg",
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 0, // Current selected tab
@@ -2374,10 +2404,16 @@ class CategoryPage extends StatelessWidget {
           ),
         ],
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.home),
+      ),
     );
   }
 }
-Widget buildCard() {
+
+Widget buildCard({required String burgerName, required String imageUrl}) {
   return Container(
     color: Colors.white, // Set white background color for the container
     child: Card(
@@ -2400,9 +2436,7 @@ Widget buildCard() {
                 bottomRight: Radius.circular(12),
               ),
               image: DecorationImage(
-                image: NetworkImage(
-                  "https://static.fanpage.it/wp-content/uploads/sites/22/2020/03/iStock-1152247466.jpg",
-                ),
+                image: NetworkImage(imageUrl),
                 fit: BoxFit.cover,
               ),
             ),
@@ -2420,7 +2454,7 @@ Widget buildCard() {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  "Burger Name",
+                  burgerName,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 18,
@@ -2451,8 +2485,4 @@ Widget buildCard() {
   );
 }
 
-void main() {
-  runApp(MaterialApp(
-    home: CategoryPage(),
-  ));
-}
+*/
