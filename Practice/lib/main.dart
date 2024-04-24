@@ -2377,70 +2377,76 @@ class CategoryPage extends StatelessWidget {
     );
   }
 }
-
 Widget buildCard() {
-  return Card(
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.only(
-        topLeft: Radius.circular(12),
-        topRight: Radius.circular(12),
+  return Container(
+    color: Colors.white, // Set white background color for the container
+    child: Card(
+      elevation: 4,
+      margin: EdgeInsets.all(20),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12), // Rounded corners for the card
       ),
-    ),
-    child: Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Container(
-          height: 200,
-          width: 200,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(12),
-              topRight: Radius.circular(12),
-            ),
-            image: DecorationImage(
-              image: NetworkImage(
-                "https://static.fanpage.it/wp-content/uploads/sites/22/2020/03/iStock-1152247466.jpg",
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Container(
+            height: 150,
+            width: double.infinity, // Make the image take full width of the card
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(12),
+                topRight: Radius.circular(12),
+                bottomLeft: Radius.circular(12), // Set bottomLeft and bottomRight to 0 to make them straight
+                bottomRight: Radius.circular(12),
               ),
-              fit: BoxFit.cover,
-            ),
-          ),
-          child: Align(
-            alignment: Alignment.topRight,
-            child: IconButton(
-              icon: Icon(Icons.favorite, color: Colors.white),
-              onPressed: () {},
-            ),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text(
-                "Burger Name",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18,
+              image: DecorationImage(
+                image: NetworkImage(
+                  "https://static.fanpage.it/wp-content/uploads/sites/22/2020/03/iStock-1152247466.jpg",
                 ),
+                fit: BoxFit.cover,
               ),
-              SizedBox(height: 8),
-               ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.orange,
-                    onPrimary: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8), // Rounded corners for the button
-                    ),
-                    padding: EdgeInsets.symmetric(vertical: 12), // Vertical padding for the button
+            ),
+            child: Align(
+              alignment: Alignment.topRight,
+              child: IconButton(
+                icon: Icon(Icons.favorite, color: Colors.white),
+                onPressed: () {},
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  "Burger Name",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
                   ),
-                  child: Text("Cart"),
                 ),
-            ],
+                SizedBox(height: 8),
+                Container(
+                  width: 100, // Set width of the button
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.orange,
+                      onPrimary: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8), // Rounded corners for the button
+                      ),
+                      padding: EdgeInsets.symmetric(vertical: 12), // Vertical padding for the button
+                    ),
+                    child: Text("Cart"),
+                  ),
+                ),
+              ],
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     ),
   );
 }
