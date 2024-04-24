@@ -2376,39 +2376,73 @@ class CategoryPage extends StatelessWidget {
       ),
     );
   }
+}
 
-  Widget buildCard() {
-    return Card(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Image.network(
-            "https://static.fanpage.it/wp-content/uploads/sites/22/2020/03/iStock-1152247466.jpg",
-            height: 150,
-            fit: BoxFit.cover,
+Widget buildCard() {
+  return Card(
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.only(
+        topLeft: Radius.circular(12),
+        topRight: Radius.circular(12),
+      ),
+    ),
+    child: Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Container(
+          height: 200,
+          width: 200,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(12),
+              topRight: Radius.circular(12),
+            ),
+            image: DecorationImage(
+              image: NetworkImage(
+                "https://static.fanpage.it/wp-content/uploads/sites/22/2020/03/iStock-1152247466.jpg",
+              ),
+              fit: BoxFit.cover,
+            ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text("Burger Name"),
-                SizedBox(height: 8),
-                ElevatedButton(
+          child: Align(
+            alignment: Alignment.topRight,
+            child: IconButton(
+              icon: Icon(Icons.favorite, color: Colors.white),
+              onPressed: () {},
+            ),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                "Burger Name",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
+                ),
+              ),
+              SizedBox(height: 8),
+               ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
                     primary: Colors.orange,
                     onPrimary: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8), // Rounded corners for the button
+                    ),
+                    padding: EdgeInsets.symmetric(vertical: 12), // Vertical padding for the button
                   ),
                   child: Text("Cart"),
                 ),
-              ],
-            ),
+            ],
           ),
-        ],
-      ),
-    );
-  }
+        ),
+      ],
+    ),
+  );
 }
 
 void main() {
