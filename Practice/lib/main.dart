@@ -2568,6 +2568,26 @@ class Page extends StatelessWidget {
     return Scaffold(
       appBar:AppBar(title: Text("Welcome to My App")),
       body: Center(
+        child: Column(
+          children: [
+            Container(
+              width: 100,
+              height:100 ,
+              color: Colors.blue,
+              child: Center(
+                child: Text("Box 1"),
+              ),
+            ),
+            SizedBox(height: 20,),
+Container(
+              width: 100,
+              height:100 ,
+              color: Colors.orange,
+            ),
+            
+          ],
+        ),
+      )
     );
   }
 }
