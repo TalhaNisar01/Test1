@@ -2547,3 +2547,27 @@ class HomePage extends StatelessWidget {
 }
 */
 
+
+
+void main (){
+  runApp(
+    MaterialApp(
+      title: "My App",
+      home: Page(),
+    )
+  );
+}
+
+
+
+class Page extends StatelessWidget {
+  const Page({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar:AppBar(title: Text("Welcome to My App")),
+      body: Center(
+    );
+  }
+}
