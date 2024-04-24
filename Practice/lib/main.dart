@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/SecondPage.dart';
+//import 'package:flutter_application_1/SecondPage.dart';
 //import 'package:url_launcher/url_launcher.dart';
 //import 'package:url_launcher/url_launcher.dart';
 /*
@@ -2486,7 +2486,7 @@ Widget buildCard({required String burgerName, required String imageUrl}) {
   );
 }
 
-*/
+
 
 
 void main(){
@@ -2534,7 +2534,7 @@ class HomePage extends StatelessWidget {
              ),
               TextButton(
               onPressed:() => {
-                
+
                  Navigator.push(context,MaterialPageRoute(builder: (context)=>SecondPage()))
               }, 
               child: Text("Login"))
@@ -2545,3 +2545,5 @@ class HomePage extends StatelessWidget {
     );
   }
 }
+*/
+
