@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/SecondPage.dart';
 //import 'package:url_launcher/url_launcher.dart';
 //import 'package:url_launcher/url_launcher.dart';
 /*
@@ -2507,7 +2508,39 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar:AppBar(
         backgroundColor: Colors.blue,
-       title:Text("Talha Nisar-1376",style: TextStyle(color:Colors.white),) 
+       title:Text("Talha Nisar-1376",style: TextStyle(color:Colors.white),),
+
+      ),
+
+      body:Center(
+        child: Column(
+          children: [
+             Text("Email",style: TextStyle(fontSize:28),),
+             SizedBox(height: 10,),
+             TextField(
+             decoration: InputDecoration(
+              hintText: "Enter  your Email" ,
+
+             ),
+             ),
+             Text("Password",style: TextStyle(fontSize:28),),
+             SizedBox(height: 10,),
+             TextField(
+              obscureText: true,
+             decoration: InputDecoration(
+              hintText: "Enter  your Passsword" ,
+
+             ),
+             ),
+              TextButton(
+              onPressed:() => {
+                
+                 Navigator.push(context,MaterialPageRoute(builder: (context)=>SecondPage()))
+              }, 
+              child: Text("Login"))
+
+          ],
+        ),
       )
     );
   }
