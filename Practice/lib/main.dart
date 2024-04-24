@@ -2493,8 +2493,22 @@ void main(){
     MaterialApp(
       debugShowCheckedModeBanner: false,
 
-      title:'Practice'
-      
+      title:'Practice',
+      home:HomePage()
     )
   );
+}
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar:AppBar(
+        backgroundColor: Colors.blue,
+       title:Text("Talha Nisar-1376",style: TextStyle(color:Colors.white),) 
+      )
+    );
+  }
 }
