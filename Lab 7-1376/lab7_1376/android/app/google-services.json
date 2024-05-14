@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1072561618336",
+    "project_id": "talha-1376",
+    "storage_bucket": "talha-1376.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1072561618336:android:3e04e0478e8be42b40f8c5",
+        "android_client_info": {
+          "package_name": "com.example.lab7_1376"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdOgDuu3PW555EPtZQ6w_T6xfju5kS4QA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
